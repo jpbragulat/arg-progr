@@ -5,7 +5,6 @@ function calcularNumeroMayor(numeros){
             numeroMayor = numeros[i];
         }
     }
-    console.log(numeros[0].value);
     return numeroMayor;
 } 
 
@@ -21,12 +20,10 @@ function calcularNumeroMenor(numeros){
 
 function calcularPromedio(numeros){
     let totalSuma=0;
-    let promedio=0;
     for(let i=0; i<numeros.length; i++){
         totalSuma = Number(totalSuma) + Number(numeros[i]);
     }
-    promedio = totalSuma / numeros.length;
-    return promedio;
+    return totalSuma / numeros.length;
+}
    
     
-}
