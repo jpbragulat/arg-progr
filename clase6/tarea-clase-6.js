@@ -61,7 +61,6 @@ agregar.onclick = function() {
 
 
 calcular.onclick = function() {
-    crearArrayNumeros();
     document.querySelector('#mayor').innerHTML = 'Numero Mayor: ' + calcularNumeroMayor(crearArrayNumeros());
     document.querySelector('#menor').innerHTML = 'Numero Menor: ' + calcularNumeroMenor(crearArrayNumeros());
     document.querySelector('#promedio').innerHTML = 'Promedio: ' + calcularPromedio(crearArrayNumeros());
