@@ -24,7 +24,6 @@ function calcularPromedio(numeros){
     let promedio=0;
     for(let i=0; i<numeros.length; i++){
         totalSuma = Number(totalSuma) + Number(numeros[i]);
-        console.log("total suma en bucle for: ", totalSuma);
     }
     promedio = totalSuma / numeros.length;
     return promedio;
