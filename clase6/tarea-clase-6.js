@@ -34,23 +34,38 @@ function agregarIntegrantes(cantidadIntegrantesFamilia){
 
 function borrarIntegrantes(){
     const $integrantes = document.querySelectorAll('.integrante-familiar');
+    let contadorIntegrantesBorrados = 0;
     for (let i=0; i<$integrantes.length; i++){
         $integrantes[i].remove();
+        contadorIntegrantesBorrados++;
     }
-    alert(`${i} integrantes han sido borrados`);
+    alert(`${contadorIntegrantesBorrados} integrantes han sido borrados`);
+}
+
+function crearArrayNumeros(){
+    const $integrantes = document.querySelectorAll('.integrante-familiar input');
+    const numerosArray = [];
+
+    for (let i=0; i<$integrantes.length; i++){
+        numerosArray[i] = Number($integrantes[i].value);
+    }
+    console.log(numerosArray);
+    return numerosArray;
 }
 
 agregar.onclick = function() {
     const cantidadIntegrantesFamilia = Number(prompt('Ingrese cantidad de integrantes de su familia: '));
     agregarIntegrantes(cantidadIntegrantesFamilia);
+    
+    
 }
 
+
 calcular.onclick = function() {
-    const $integrantes = document.querySelectorAll('.integrante-familiar input');
-    
-    document.querySelector('#mayor').innerHTML = 'Numero Mayor: ' + calcularNumeroMayor($integrantes);
-    document.querySelector('#menor').innerHTML = 'Numero Menor: ' + calcularNumeroMenor($integrantes);
-    document.querySelector('#promedio').innerHTML = 'Promedio: ' + calcularPromedio($integrantes);
+    crearArrayNumeros();
+    document.querySelector('#mayor').innerHTML = 'Numero Mayor: ' + calcularNumeroMayor(crearArrayNumeros());
+    document.querySelector('#menor').innerHTML = 'Numero Menor: ' + calcularNumeroMenor(crearArrayNumeros());
+    document.querySelector('#promedio').innerHTML = 'Promedio: ' + calcularPromedio(crearArrayNumeros());
 
 }
 
