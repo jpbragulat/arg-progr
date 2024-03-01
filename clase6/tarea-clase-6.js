@@ -49,7 +49,6 @@ function crearArrayNumeros(){
     for (let i=0; i<$integrantes.length; i++){
         numerosArray[i] = Number($integrantes[i].value);
     }
-    console.log(numerosArray);
     return numerosArray;
 }
 
