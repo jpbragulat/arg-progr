@@ -11,11 +11,6 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 
 //agregarIntegrantes(cantidadIntegrantesFamilia);
 
-agregar.onclick = function() {
-    const cantidadIntegrantesFamilia = Number(prompt('Ingrese cantidad de integrantes de su familia: '));
-    agregarIntegrantes(cantidadIntegrantesFamilia);
-}
-
 
 function agregarIntegrantes(cantidadIntegrantesFamilia){
 
@@ -45,15 +40,17 @@ function borrarIntegrantes(){
     alert(`${i} integrantes han sido borrados`);
 }
 
+agregar.onclick = function() {
+    const cantidadIntegrantesFamilia = Number(prompt('Ingrese cantidad de integrantes de su familia: '));
+    agregarIntegrantes(cantidadIntegrantesFamilia);
+}
+
 calcular.onclick = function() {
     const $integrantes = document.querySelectorAll('.integrante-familiar input');
-    console.log("NodeList: ", $integrantes);
-    for(i=0; i<$integrantes.length; i++){
-        console.log($integrantes[i].value);
-    }
-    calcularPromedio($integrantes);
-    calcularNumeroMayor($integrantes);
-    calcularNumeroMenor($integrantes);
+    
+    document.querySelector('#mayor').innerHTML = 'Numero Mayor: ' + calcularNumeroMayor($integrantes);
+    document.querySelector('#menor').innerHTML = 'Numero Menor: ' + calcularNumeroMenor($integrantes);
+    document.querySelector('#promedio').innerHTML = 'Promedio: ' + calcularPromedio($integrantes);
 
 }
 
@@ -67,4 +64,17 @@ borrar.onclick = function() {
     }
 
 }
+
+reset.onclick = function() {
+    document.querySelector('#mayor').innerHTML = 'Numero Mayor: ' + 0;
+    document.querySelector('#menor').innerHTML = 'Numero Menor: ' + 0;
+    document.querySelector('#promedio').innerHTML = 'Promedio: ' + 0;
+    const $integrantes = document.querySelectorAll('.integrante-familiar input');
+    for (let i=0; i<$integrantes.length; i++){
+        $integrantes[i].value = 0;
+    }
+}
+         
     
+    
+
