@@ -33,9 +33,12 @@
 }
 
 .error {
-    border: 2px solid red;
+    border: 2px solid rgb(255, 166, 0);
 }
 
+.formOK {
+    border: 2px solid rgb(0, 255, 21);
+}
 .errorsBlock {
     font-size: 14px;
     color: red;
